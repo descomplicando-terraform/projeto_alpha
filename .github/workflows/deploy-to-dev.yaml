@@ -11,7 +11,7 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
-  terratest:
+  deploy-to-dev:
     runs-on: ubuntu-latest
     environment: testing
     steps:
