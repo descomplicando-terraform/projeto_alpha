@@ -22,6 +22,6 @@ jobs:
 
       - name: deploy to dev
         working-directory: iac/terraform/dev
-        run:
+        run: |
           terraform init
           terraform apply -auto-approve

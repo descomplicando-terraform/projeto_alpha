@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "descomplicando-terraform-linuxtips"
+    bucket = "descomplicando-terraform-linuxtips-aulas"
     key    = "aula_atlantis"
     region = "us-east-1"
   }
