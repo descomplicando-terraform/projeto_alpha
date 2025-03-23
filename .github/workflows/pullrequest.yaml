@@ -1,0 +1,29 @@
+name: Pull Request Terraform Plan
+
+on:
+  pull_request:
+    branches:
+        - main
+
+env: 
+  AWS_REGION: us-east-1
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  terraform-plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+        - name: Setup Terraform
+          uses: hashicorp/setup-terraform@v2
+
+        - name: Initialize Terraform
+          run: terraform init
+
+        - name: Terraform Plan
+          run: terraform plan

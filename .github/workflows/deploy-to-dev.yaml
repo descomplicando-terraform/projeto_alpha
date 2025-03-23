@@ -1,0 +1,27 @@
+name: deploy em desenvolvimento
+
+on:
+  push:
+    branches:
+      - main
+
+env: 
+  AWS_REGION: us-east-1
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  terratest:
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: deploy to dev
+        working-directory: iac/terraform/dev
+        run:
+          terraform init
+          terraform apply -auto-approve

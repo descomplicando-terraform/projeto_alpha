@@ -1,5 +1,4 @@
 module "dev" {
-  source  = "descomplicando-terraform/ambiente-professor/aws"
-  version = "v1.0.1"
-  nome    = "alpha_dev"
+  source = "git@github.com:descomplicando-terraform/terraform-aws-ambiente-professor.git?ref=v1.0.2"
+  nome   = "alpha_dev"
 }
