@@ -4,7 +4,3 @@ projects:
     dir: ./iac/terraform/dev
     autoplan:
       enabled: true
-      when_modified:
-        - "./terraform/modules/**/*.tf"
-        - "**/*.tf"
-        - ".terraform.lock.hcl"
