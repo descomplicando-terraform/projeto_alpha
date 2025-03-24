@@ -1,4 +1,7 @@
 version: 3
+automerge: true
+delete_source_branch_on_merge: true
+
 projects:
 - name: dev
   dir: iac/terraform/dev
