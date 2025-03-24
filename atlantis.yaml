@@ -1,0 +1,5 @@
+version: 3
+projects:
+- name: dev
+  dir: iac/terraform/dev
+  
